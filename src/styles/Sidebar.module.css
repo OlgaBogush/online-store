@@ -1,0 +1,44 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 304px;
+  height: 423px;
+  padding: 24px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.link {
+  color: var(--gray);
+  font-size: 14px;
+  text-transform: capitalize;
+
+  transition: all .2s linear;
+}
+
+.link:hover {
+  color: var(--dark);
+}
+
+.link.active {
+  color: var(--pink);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.footer .link {
+  font-size: 12px;
+}

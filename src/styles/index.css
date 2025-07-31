@@ -6,6 +6,7 @@
   --dark: #212123;
   --blue: #7ed0ec;
   --pink: #DF1463;
+  --light: #F6F6F7;
 }
 
 * {
@@ -52,6 +53,7 @@ input {
 }
 
 a {
+  color: var(--gray);
   text-decoration: none;
 }
 

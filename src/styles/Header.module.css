@@ -115,12 +115,12 @@
   position: absolute;
   width: 14px;
   height: 14px;
-  background-color: var(--blue);
+  background-color: var(--pink);
   right: -2px;
   bottom: -2px;
   border-radius: 50%;
   font-size: 10px;
-  color: var(--gray);
+  color: var(--light);
   text-align: center;
   line-height: 16px;
 }
