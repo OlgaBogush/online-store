@@ -1,0 +1,97 @@
+:root {
+  --gold: #9D8665;
+  --gold-light: #D2B183;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 16px;
+}
+
+input {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  border-radius: 5px;
+  padding: 9px 20px;
+  font-weight: 500;
+  background-color: var(--gold);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--gold-light);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+section {
+  border-radius: 5px;
+}
+
+.app {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon {
+  width: 12px;
+  height: 12px;
+}
+
