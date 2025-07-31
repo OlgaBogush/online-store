@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.logo a {
+  height: 100%;
+}
+
+.rights {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.rights a {
+  color: var(--pink);
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--gray);
+
+  transition: all .2s linear;
+}
+
+.socials svg:hover {
+  fill: var(--blue);
+}
