@@ -22,7 +22,7 @@ const App = () => {
       <Header />
 
       <div className="container">
-        <Sidebar />
+        <Sidebar amount={7} />
         <Routes>
           <Route index element={<Home />} />
         </Routes>

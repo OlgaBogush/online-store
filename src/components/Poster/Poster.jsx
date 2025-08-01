@@ -2,7 +2,7 @@ import React from "react"
 
 import styles from "../../styles/Home.module.css"
 
-import BG from "../../images/shopping-cart.png"
+import BG from "../../images/computer.png"
 
 const Poster = () => (
   <section className={styles.home}>

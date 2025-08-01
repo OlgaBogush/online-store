@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import styles from "../../styles/Header.module.css"
 
 import LOGO from "../../images/logo.svg"
-import AVATAR from "../../images/avatar.svg"
+import AVATAR from "../../images/avatar.jpg"
 import { ROUTES } from "../../utils/routes"
 
 const Header = () => (
