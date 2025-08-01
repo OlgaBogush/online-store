@@ -3,14 +3,16 @@ import { useSelector } from "react-redux"
 
 import Poster from "../Poster/Poster"
 import Products from "../Products/Products"
+import Categories from "../Categories/Categories"
 
 const Home = () => {
-  const {list} = useSelector(state => state.products)
+  const {products, categories} = useSelector((state) => state)
 
   return (
     <>
       <Poster />
-      <Products title="Trending" products={list} amount={5} />
+      <Products title="Trending" products={products.list} amount={5} />
+      <Categories title="Worth seeing" products={categories.list} amount={5} />
     </>
   )
 }
