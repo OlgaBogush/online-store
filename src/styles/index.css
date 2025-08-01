@@ -31,7 +31,6 @@ p {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  line-height: 24px;
 }
 
 img {
@@ -69,7 +68,10 @@ button {
   padding: 9px 20px;
   font-weight: 500;
   background-color: var(--gold);
+  color: var(--dark);
   cursor: pointer;
+
+  transition: all .2s linear;
 }
 
 button:hover {
@@ -87,7 +89,7 @@ section {
 }
 
 .app {
-  width: 1200px;
+  width: 1274px;
   margin: 0 auto;
 }
 
