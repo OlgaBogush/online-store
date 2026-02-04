@@ -7,7 +7,7 @@ import styles from "../styles/Header.module.css"
 
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Link to={"/"} className={styles.logo}>
         <img className={styles.handbag} src={logo} alt="handbag" />
         Exclusive
@@ -38,7 +38,7 @@ const Header = () => {
             />
           </div>
 
-          <div className={styles.box}></div>
+          {true && <div className={styles.box}></div>}
         </form>
         <div className={styles.account}>
           <Link to="/" className={styles.favourites}>
@@ -54,7 +54,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

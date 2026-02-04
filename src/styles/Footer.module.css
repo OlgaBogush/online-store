@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 300px;
+  font-weight: 800;
+}
+.rights {
+  color: var(--dark-grey);
+  font-size: 12px;
+}
+.rights a {
+  color: var(--light-red);
+}
+.socials {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.socials svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--gray);
+}
+.socials svg:hover {
+  fill: var(--black);
+}
