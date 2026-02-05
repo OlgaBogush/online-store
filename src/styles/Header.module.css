@@ -31,7 +31,6 @@
   gap: 10px;
   height: 30px;
   width: 300px;
-  border-radius: 5px;
   padding: 7px 10px;
   background-color: var(--light-gray);
 }
@@ -63,7 +62,7 @@
 .account {
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  gap: 5px;
 }
 .account svg {
   width: 24px;
