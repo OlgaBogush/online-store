@@ -20,8 +20,8 @@
   text-transform: capitalize;
 }
 .link:hover {
-  color: var(--light-red);
+  color: var(--black);
 }
 .link.active {
-  color: var(--red);
+  color: var(--light-red);
 }

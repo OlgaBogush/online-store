@@ -32,7 +32,8 @@
   height: 30px;
   width: 300px;
   padding: 7px 10px;
-  background-color: var(--light-gray);
+  border: 1px solid var(--light-gray);
+  /* background-color: var(--light-gray); */
 }
 .avatar {
   width: 36px;
@@ -68,6 +69,7 @@
   width: 24px;
   height: 24px;
 }
+
 .icon-fav {
   stroke: var(--gray);
   fill: none;

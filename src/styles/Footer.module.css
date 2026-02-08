@@ -18,6 +18,9 @@
   font-size: 12px;
 }
 .rights a {
+  color: var(--pink);
+}
+.rights a:hover {
   color: var(--light-red);
 }
 .socials {

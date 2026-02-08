@@ -24,7 +24,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--dark-grey);
 }
 input,
 button {
@@ -37,4 +37,15 @@ li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+button {
+  background: var(--light-red);
+  width: 125px;
+  height: 38px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--dark-red);
 }

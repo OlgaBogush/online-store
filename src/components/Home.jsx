@@ -1,7 +1,8 @@
 import React from "react"
+import Poster from "./Poster"
 
 const Home = () => {
-  return <div>Home</div>
+  return <Poster />
 }
 
 export default Home
