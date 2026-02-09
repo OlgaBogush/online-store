@@ -36,20 +36,20 @@
   /* background-color: var(--light-gray); */
 }
 .avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  width: 13px;
+  height: 13px;
+  fill: var(--gray);
+}
+.user:hover .avatar {
+  fill: var(--black);
 }
 .username {
   font-size: 12px;
 }
-.icon {
+.search {
   width: 13px;
   height: 13px;
-  stroke: var(--gray);
+  fill: var(--gray);
 }
 .input {
   flex-grow: 1;
@@ -57,30 +57,30 @@
 .input input {
   width: 100%;
 }
-.bag {
+
+/* icons */
+.cart {
   position: relative;
 }
 .account {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 .account svg {
   width: 24px;
   height: 24px;
 }
-
-.icon-fav {
-  stroke: var(--gray);
-  fill: none;
-}
-.icon-fav:hover {
-  stroke: var(--black);
-}
-.icon-bag {
+.icon-heart {
   fill: var(--gray);
 }
-.icon-bag:hover {
+.icon-heart:hover {
+  fill: var(--black);
+}
+.icon-cart {
+  fill: var(--gray);
+}
+.icon-cart:hover {
   fill: var(--black);
 }
 .count {
@@ -89,8 +89,8 @@
   height: 14px;
   background: var(--light-red);
   color: var(--white);
-  right: -2px;
-  bottom: -2px;
+  right: -6px;
+  bottom: -6px;
   border-radius: 50%;
   font-size: 10px;
   text-align: center;
