@@ -7,10 +7,8 @@
 }
 .logo {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   gap: 5px;
-  width: 300px;
   font-weight: 800;
 }
 .rights {
@@ -18,15 +16,18 @@
   font-size: 12px;
 }
 .rights a {
-  color: var(--pink);
+  color: var(--light-red);
 }
 .rights a:hover {
-  color: var(--light-red);
+  color: var(--pink);
 }
 .socials {
   display: flex;
-  align-items: end;
   gap: 5px;
+}
+.socials a {
+  width: 24px;
+  height: 24px;
 }
 .socials svg {
   width: 24px;
