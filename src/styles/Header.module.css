@@ -33,12 +33,12 @@
   width: 300px;
   padding: 7px 10px;
   border: 1px solid var(--light-gray);
-  /* background-color: var(--light-gray); */
 }
 .avatar {
-  width: 13px;
-  height: 13px;
+  width: 24px;
+  height: 24px;
   fill: var(--gray);
+  border-radius: 50%;
 }
 .user:hover .avatar {
   fill: var(--black);

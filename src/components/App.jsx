@@ -7,11 +7,14 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
 import { getCategories } from "../store/categoriesSlice"
+import { getProducts } from "../store/productsSlice"
 
 const App = () => {
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(getCategories())
+    dispatch(getProducts())
   }, [dispatch])
 
   return (
