@@ -1,8 +1,9 @@
 import React from "react"
 
-import styles from "../styles/Home.module.css"
 import image from "../images/apple.png"
 import BG from "../images/hero.png"
+
+import styles from "../styles/Home.module.css"
 
 const Poster = () => {
   return (
@@ -16,7 +17,7 @@ const Poster = () => {
           Up to 10% <br />
           off Voucher
         </div>
-        <button className={styles.button}>Shop Now</button>
+        <button>Shop Now</button>
       </div>
       <img src={BG} alt="phone" />
     </section>
