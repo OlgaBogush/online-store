@@ -2,7 +2,8 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import Poster from "./Poster"
-import Products from "./Products"
+
+import Products from "./Products/Products"
 import Categories from "./Categories"
 import Banner from "./Banner"
 import { filterByPrice } from "../store/productsSlice"

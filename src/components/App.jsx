@@ -8,6 +8,7 @@ import Footer from "./Footer"
 import Sidebar from "./Sidebar"
 import { getCategories } from "../store/categoriesSlice"
 import { getProducts } from "../store/productsSlice"
+import SingleProduct from "./Products/SingleProduct"
 
 const App = () => {
   const dispatch = useDispatch()
@@ -21,9 +22,10 @@ const App = () => {
     <div className="app">
       <Header />
       <div className="container">
-        <Sidebar />
+        <Sidebar amount={7} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
         </Routes>
       </div>
       <Footer />

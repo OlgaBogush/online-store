@@ -4,14 +4,15 @@ import { useSelector } from "react-redux"
 
 import styles from "../styles/Sidebar.module.css"
 
-const Sidebar = () => {
+const Sidebar = ({ amount }) => {
   const { list } = useSelector((state) => state.categories)
+  const listFiltered = list.filter((_, index) => index < amount)
 
   return (
     <section className={styles.sidebar}>
       <nav>
         <ul className={styles.menu}>
-          {list.map(({ id, name }) => {
+          {listFiltered.map(({ id, name }) => {
             return (
               <li key={id}>
                 <NavLink
