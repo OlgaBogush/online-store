@@ -23,6 +23,10 @@ p {
   flex-wrap: wrap;
   gap: 20px;
 }
+.icon {
+  width: 12px;
+  height: 12px;
+}
 a {
   text-decoration: none;
   color: var(--dark-grey);

@@ -17,12 +17,12 @@
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
+  cursor: pointer;
 }
 .user {
   display: flex;
   align-items: center;
   gap: 5px;
-  cursor: pointer;
 }
 .form {
   display: flex;
@@ -34,16 +34,19 @@
   border: 1px solid var(--light-gray);
 }
 .avatar {
-  width: 24px;
-  height: 24px;
-  fill: var(--gray);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-}
-.user:hover .avatar {
-  fill: var(--black);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .username {
   font-size: 12px;
+  color: var(--dark-grey);
+}
+.user:hover .username {
+  color: var(--black);
 }
 .search {
   width: 13px;

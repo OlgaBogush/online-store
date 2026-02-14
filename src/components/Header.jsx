@@ -1,10 +1,32 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 
 import logo from "../images/handbag.png"
+import AVATAR from "../images/user.png"
 import styles from "../styles/Header.module.css"
 
+import { toggleForm } from "../store/userSlice"
+
 const Header = () => {
+  const [value, setValue] = useState({ name: "Guest", avatar: AVATAR })
+  const { currentUser } = useSelector((state) => state.users)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    if (!currentUser) {
+      dispatch(toggleForm(true))
+    } else {
+      navigate("/profile")
+    }
+  }
+
+  useEffect(() => {
+    if (!currentUser) return
+    setValue(currentUser)
+  }, [currentUser])
+
   return (
     <header className={styles.header}>
       <Link to={"/"} className={styles.logo}>
@@ -13,15 +35,12 @@ const Header = () => {
       </Link>
 
       <div className={styles.info}>
-        <div className={styles.user}>
-          <svg
+        <div className={styles.user} onClick={handleClick}>
+          <div
             className={styles.avatar}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path d="M144 128a80 80 0 1 1 160 0 80 80 0 1 1 -160 0zm208 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0zM48 480c0-70.7 57.3-128 128-128l96 0c70.7 0 128 57.3 128 128l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8c0-97.2-78.8-176-176-176l-96 0C78.8 304 0 382.8 0 480l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8z" />
-          </svg>
-          <div className={styles.username}>Guest</div>
+            style={{ backgroundImage: `url(${value.avatar})` }}
+          />
+          <div className={styles.username}>{value.name}</div>
         </div>
 
         <form className={styles.form}>
