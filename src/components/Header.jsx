@@ -10,6 +10,7 @@ import { toggleForm } from "../store/userSlice"
 
 const Header = () => {
   const [value, setValue] = useState({ name: "Guest", avatar: AVATAR })
+  const [searchValue, setSearchValue] = useState("")
   const { currentUser } = useSelector((state) => state.users)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -26,6 +27,10 @@ const Header = () => {
     if (!currentUser) return
     setValue(currentUser)
   }, [currentUser])
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value)
+  }
 
   return (
     <header className={styles.header}>
@@ -58,12 +63,10 @@ const Header = () => {
               name="search"
               placeholder="Search for anything..."
               autoComplete="off"
-              onChange={() => {}}
-              value=""
+              onChange={handleSearch}
+              value={searchValue}
             />
           </div>
-
-          {true && <div className={styles.box}></div>}
         </form>
         <div className={styles.account}>
           <Link to="/" className={styles.heart}>

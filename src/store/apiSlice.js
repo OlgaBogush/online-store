@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 import { BASE_URL } from "../utils/constants"
+import { buildUrl } from "../helpers/common"
 
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
@@ -10,7 +11,10 @@ export const apiSlice = createApi({
     getProduct: build.query({
       query: ({ id }) => `/products/${id}`,
     }),
+    getProducts: build.query({
+      query: (params) => buildUrl("/products", params),
+    }),
   }),
 })
 
-export const { useGetProductQuery } = apiSlice
+export const { useGetProductQuery, useGetProductsQuery } = apiSlice
