@@ -7,6 +7,7 @@ import AVATAR from "../images/user.png"
 import styles from "../styles/Header.module.css"
 
 import { toggleForm } from "../store/userSlice"
+import { useGetProductsQuery } from "../store/apiSlice"
 
 const Header = () => {
   const [value, setValue] = useState({ name: "Guest", avatar: AVATAR })
@@ -14,6 +15,8 @@ const Header = () => {
   const { currentUser } = useSelector((state) => state.users)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  const { data, isLoading } = useGetProductsQuery({ title: searchValue })
 
   const handleClick = () => {
     if (!currentUser) {
@@ -67,6 +70,30 @@ const Header = () => {
               value={searchValue}
             />
           </div>
+          {searchValue && (
+            <div className={styles.box}>
+              {isLoading
+                ? "Loading..."
+                : !data.length
+                ? "No results"
+                : data.map(({ title, images, id }) => {
+                    return (
+                      <Link
+                        key={id}
+                        className={styles.item}
+                        to={`/products/${id}`}
+                        onClick={() => setSearchValue("")}
+                      >
+                        <div
+                          className={styles.image}
+                          style={{ backgroundImage: `url(${images[0]})` }}
+                        />
+                        <div className={styles.title}>{title}</div>
+                      </Link>
+                    )
+                  })}
+            </div>
+          )}
         </form>
         <div className={styles.account}>
           <Link to="/" className={styles.heart}>
