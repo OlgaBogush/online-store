@@ -7,7 +7,7 @@ const Products = ({ title, style = {}, products = [], amount }) => {
   const list = products.filter((_, index) => index < amount)
 
   return (
-    <section className={styles.products}>
+    <section className={styles.products} style={style}>
       {title && <h2>{title}</h2>}
       <div className={styles.list}>
         {list.map(({ id, images, title, category: { name: cat }, price }) => (

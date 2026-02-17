@@ -11,6 +11,7 @@ import { getProducts } from "../store/productsSlice"
 import SingleProduct from "./Products/SingleProduct"
 import UserForm from "./User/UserForm"
 import Profile from "./Profile"
+import SingleCategory from "./Categories/SingleCategory"
 
 const App = () => {
   const dispatch = useDispatch()
@@ -30,6 +31,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/categories/:id" element={<SingleCategory />} />
         </Routes>
       </div>
       <Footer />

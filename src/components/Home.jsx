@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import Poster from "./Poster"
 
 import Products from "./Products/Products"
-import Categories from "./Categories"
+import Categories from "./Categories/Categories"
 import Banner from "./Banner"
 import { filterByPrice } from "../store/productsSlice"
 

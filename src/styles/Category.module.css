@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+  padding: 20px;
+  flex-grow: 1;
+}
+.filters {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid var(--light-gray);
+}
+.full {
+  width: 100%;
+}
+.filter input {
+  font-weight: 400;
+  font-size: 13px;
+  flex-grow: 1;
+}
+.filter span {
+  font-weight: 400;
+  font-size: 13px;
+}
+.more {
+  margin: 32px auto 0 auto;
+  text-align: center;
+}
+.back {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
