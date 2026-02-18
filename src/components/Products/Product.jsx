@@ -69,6 +69,7 @@ const Product = (props) => {
         </div>
         <p className={styles.description}>{description}</p>
         <div className={styles.actions}>
+          <button className={styles.favourites}>Add to favourites</button>
           <button
             className={styles.add}
             disabled={!currentSize}
@@ -76,7 +77,6 @@ const Product = (props) => {
           >
             Add to cart
           </button>
-          <button className={styles.favourites}>Add to favourites</button>
         </div>
       </div>
     </section>
