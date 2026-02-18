@@ -34,16 +34,33 @@ const Category = () => {
   const [values, setValues] = useState(defaultValues)
   const [params, setParams] = useState(defaultParams)
 
-  // getting products
+  const [isEnd, setIsEnd] = useState(false)
+
+  // getting products according to the limit
+  const { data, isLoading, isSuccess } = useGetProductsQuery(params)
+  const [items, setItems] = useState([])
+
   useEffect(() => {
     if (!id) return
+    setItems([])
+    setIsEnd(false)
+    setValues(defaultValues)
     setParams({ ...defaultParams, categoryId: id })
   }, [id])
-  const { data, isLoading, isSuccess } = useGetProductsQuery(params)
 
-  // pagination
-  const [isEnd, setIsEnd] = useState(false)
-  const [items, setItems] = useState([])
+  useEffect(() => {
+    if (isLoading) return
+    if (data.length < defaultParams.limit) {
+      setItems((prev) => [...prev, ...data])
+      return setIsEnd(true)
+    }
+    // for reset button only
+    if (!data.length) {
+      setIsEnd(true)
+    }
+
+    setItems((prev) => [...prev, ...data])
+  }, [data, isLoading])
 
   const handleChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value })
@@ -51,7 +68,14 @@ const Category = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setItems([])
+    setIsEnd(false)
     setParams({ ...defaultParams, ...values })
+  }
+
+  const handleReset = () => {
+    setValues(defaultValues)
+    setParams(defaultParams)
   }
 
   return (
@@ -91,23 +115,29 @@ const Category = () => {
       </form>
       {isLoading ? (
         <div className="preloader">Loading...</div>
-      ) : !isSuccess || !data.length ? (
+      ) : !isSuccess || !items.length ? (
         <div className={styles.back}>
           <span>No results</span>
-          <button onClick={() => {}}>Reset</button>
+          <button onClick={handleReset}>Reset</button>
         </div>
       ) : (
         <Products
           title=""
-          products={data}
+          products={items}
           style={{ padding: 0 }}
-          amount={data.length}
+          amount={items.length}
         />
       )}
       {!isEnd && (
-        <div className={styles.more}>
-          <button onClick={() => {}}>See more</button>
-        </div>
+        <button
+          className={styles.more}
+          onClick={() =>
+            setParams({ ...params, offset: params.offset + params.limit })
+          }
+          disabled={isEnd}
+        >
+          See more
+        </button>
       )}
     </section>
   )
