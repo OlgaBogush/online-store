@@ -34,7 +34,7 @@ const Category = () => {
   const [values, setValues] = useState(defaultValues)
   const [params, setParams] = useState(defaultParams)
 
-  const [isEnd, setIsEnd] = useState(false)
+  const [seeMore, setSeeMore] = useState(true)
 
   // getting products according to the limit
   const { data, isLoading, isSuccess } = useGetProductsQuery(params)
@@ -43,7 +43,6 @@ const Category = () => {
   useEffect(() => {
     if (!id) return
     setItems([])
-    setIsEnd(false)
     setValues(defaultValues)
     setParams({ ...defaultParams, categoryId: id })
   }, [id])
@@ -52,14 +51,10 @@ const Category = () => {
     if (isLoading) return
     if (data.length < defaultParams.limit) {
       setItems((prev) => [...prev, ...data])
-      return setIsEnd(true)
+      return setSeeMore(false)
     }
-    // for reset button only
-    if (!data.length) {
-      setIsEnd(true)
-    }
-
     setItems((prev) => [...prev, ...data])
+    setSeeMore(true)
   }, [data, isLoading])
 
   const handleChange = ({ target: { name, value } }) => {
@@ -69,7 +64,6 @@ const Category = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setItems([])
-    setIsEnd(false)
     setParams({ ...defaultParams, ...values })
   }
 
@@ -128,13 +122,13 @@ const Category = () => {
           amount={items.length}
         />
       )}
-      {!isEnd && (
+      {seeMore && (
         <button
           className={styles.more}
           onClick={() =>
             setParams({ ...params, offset: params.offset + params.limit })
           }
-          disabled={isEnd}
+          disabled={!seeMore}
         >
           See more
         </button>
